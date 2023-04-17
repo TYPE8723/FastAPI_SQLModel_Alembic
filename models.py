@@ -25,7 +25,7 @@ class MusicSales(SQLModel,table = True):
     id:int = Field(default = None,primary_key=True)
     max_week_sales:Optional[int] = Field(default=0)
     sales_count:int = Field(nullable=False)
-    song_id:int = Field(nullable=False)
+    song_id:int = Field(nullable=False)#Field(default=None, foreign_key="team.id")
     songs:Optional["Song"] = Relationship(back_populates="musicsales")
 
 
